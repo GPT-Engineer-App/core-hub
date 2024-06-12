@@ -1,18 +1,34 @@
-import { Container, Box, VStack, Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input, Textarea, Button } from "@chakra-ui/react";
+import { Container, Box, VStack, Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input, Textarea, Button, Flex, Icon } from "@chakra-ui/react";
+import { FaHandsHelping, FaBullseye, FaProjectDiagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Index = () => {
   return (
     <Container maxW="container.xl" p={4}>
       <VStack spacing={10} align="stretch">
         {/* Hero Section */}
-        <Box textAlign="center" py={10} bg="gray.100" borderRadius="md">
-          <Heading as="h1" size="2xl" mb={4}>Rebuilding Libya</Heading>
-          <Text fontSize="xl">Join us in our mission to reconstruct and develop Libya for a better future.</Text>
+        <Box
+          textAlign="center"
+          py={20}
+          bgImage="url('/images/background-image.jpg')"
+          bgSize="cover"
+          bgPosition="center"
+          borderRadius="md"
+          color="white"
+          position="relative"
+        >
+          <Box position="absolute" top="0" left="0" right="0" bottom="0" bg="blackAlpha.600" borderRadius="md" />
+          <Box position="relative">
+            <Heading as="h1" size="2xl" mb={4}>Rebuilding Libya</Heading>
+            <Text fontSize="xl">Join us in our mission to reconstruct and develop Libya for a better future.</Text>
+          </Box>
         </Box>
 
         {/* About Us Section */}
         <Box>
-          <Heading as="h2" size="xl" mb={4}>About Us</Heading>
+          <Flex align="center" mb={4}>
+            <Icon as={FaHandsHelping} w={8} h={8} color="blue.500" mr={2} />
+            <Heading as="h2" size="xl">About Us</Heading>
+          </Flex>
           <Text fontSize="lg">
             We are an organization dedicated to the reconstruction and development of Libya. Our team is composed of experts from various fields who are committed to making a positive impact.
           </Text>
@@ -20,7 +36,10 @@ const Index = () => {
 
         {/* Mission Section */}
         <Box>
-          <Heading as="h2" size="xl" mb={4}>Our Mission</Heading>
+          <Flex align="center" mb={4}>
+            <Icon as={FaBullseye} w={8} h={8} color="blue.500" mr={2} />
+            <Heading as="h2" size="xl">Our Mission</Heading>
+          </Flex>
           <Text fontSize="lg">
             Our mission is to support the rebuilding of Libya by providing resources, expertise, and collaboration with local and international partners. We aim to create sustainable development projects that will benefit the Libyan people for generations to come.
           </Text>
@@ -28,7 +47,10 @@ const Index = () => {
 
         {/* Projects Section */}
         <Box>
-          <Heading as="h2" size="xl" mb={4}>Our Projects</Heading>
+          <Flex align="center" mb={4}>
+            <Icon as={FaProjectDiagram} w={8} h={8} color="blue.500" mr={2} />
+            <Heading as="h2" size="xl">Our Projects</Heading>
+          </Flex>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
             <Box bg="gray.50" p={5} borderRadius="md" boxShadow="md">
               <Heading as="h3" size="lg" mb={2}>Project 1</Heading>
@@ -66,9 +88,18 @@ const Index = () => {
               <Button colorScheme="blue" mt={4}>Send Message</Button>
             </GridItem>
             <GridItem>
-              <Text fontSize="lg" mb={2}>Email: info@rebuildinglibya.org</Text>
-              <Text fontSize="lg" mb={2}>Phone: +123 456 7890</Text>
-              <Text fontSize="lg">Address: 123 Reconstruction St, Copenhagen, Denmark</Text>
+              <Flex align="center" mb={2}>
+                <Icon as={FaEnvelope} w={6} h={6} color="blue.500" mr={2} />
+                <Text fontSize="lg">info@rebuildinglibya.org</Text>
+              </Flex>
+              <Flex align="center" mb={2}>
+                <Icon as={FaPhone} w={6} h={6} color="blue.500" mr={2} />
+                <Text fontSize="lg">+123 456 7890</Text>
+              </Flex>
+              <Flex align="center">
+                <Icon as={FaMapMarkerAlt} w={6} h={6} color="blue.500" mr={2} />
+                <Text fontSize="lg">123 Reconstruction St, Copenhagen, Denmark</Text>
+              </Flex>
             </GridItem>
           </SimpleGrid>
         </Box>
